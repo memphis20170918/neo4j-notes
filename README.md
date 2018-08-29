@@ -24,3 +24,11 @@ MATCH (n) RETURN n;
 ```
 
 2 rows available after 3 ms, consumed after another 5 ms
+
+* Adding constraints.
+
+```shell
+neo4j> CREATE CONSTRAINT ON (router: Router) ASSERT router.name IS UNIQUE; 
+0 rows available after 458 ms, consumed after another 0 ms
+Added 1 constraints
+```

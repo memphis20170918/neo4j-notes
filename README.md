@@ -13,7 +13,7 @@ Added 2 nodes, Created 1 relationships, Set 4 properties, Added 2 labels
 CREATE CONSTRAINT ON (router: Router) ASSERT router.name IS UNIQUE;
 
 - list all rows in the default database.
-
+```shell
 MATCH (n) RETURN n;
 +---------------------------------+
 | n                               |
@@ -21,5 +21,6 @@ MATCH (n) RETURN n;
 | (:Router {name: "node1"})       |
 | (:Router {name: "node2"})       |
 +---------------------------------+
+```
 
 2 rows available after 3 ms, consumed after another 5 ms

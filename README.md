@@ -1,6 +1,19 @@
 # neo4j-notes
 
-* Create nodes and relationships.
+* Create the `Router` and `Neighbor` nodes.
+
+```shell
+neo4j> CREATE (p:Router {name: "node1"}), (c:Router {name: "node2"});
+0 rows available after 44 ms, consumed after another 0 ms
+Added 2 nodes, Set 2 properties, Added 2 labels
+```
+```shell
+neo4j> CREATE (:Neighbor {parent: "node1", child: "node2"}); 
+0 rows available after 39 ms, consumed after another 0 ms
+Added 1 nodes, Set 2 properties, Added 1 labels
+```
+
+* Create the relationship connecting `node1` and `node2`.
 ```shell
 CREATE (p:Router {name: "node1"}) - [:Neighbor {parent: "node1", child: "node2"}] -> (c:Router {name: "node2"});
 0 rows available after 345 ms, consumed after another 0 ms

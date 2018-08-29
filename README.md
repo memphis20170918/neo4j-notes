@@ -58,7 +58,7 @@ neo4j> match (n:Neighbor {parent: "node1", child: "node2"}) delete n;
 Deleted 1 nodes
 ```
 
-* View the graph.
+* View the graph in a _undirected_ form.
 ```shell
 neo4j> MATCH (r1:Router)-[n]-(r2) RETURN r1, n, r2;
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -70,6 +70,8 @@ neo4j> MATCH (r1:Router)-[n]-(r2) RETURN r1, n, r2;
 
 2 rows available after 127 ms, consumed after another 18 ms
 ```
+
+* View the graph in a _directed_ form.
 ```shell
 neo4j> MATCH (parent:Router)-[n]->(child) RETURN parent, neighbor, child;
 +-----------------------------------------------------------------------------------------------------------------------+

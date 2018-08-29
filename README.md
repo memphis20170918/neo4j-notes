@@ -95,6 +95,7 @@ neo4j> MATCH (n) RETURN n;
 0 rows available after 1 ms, consumed after another 0 ms
 neo4j>
 ```
+All 3 instructions in one line.
 ```shell
 neo4j> match (a)-[r]->() delete a,r; match (a) delete a; MATCH (n) RETURN n;
 0 rows available after 3 ms, consumed after another 0 ms

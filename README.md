@@ -45,3 +45,15 @@ neo4j> CREATE CONSTRAINT ON (router: Router) ASSERT router.name IS UNIQUE;
 0 rows available after 458 ms, consumed after another 0 ms
 Added 1 constraints
 ```
+
+* Delete a node.
+```shell
+neo4j> match (r:Router {name: "node1"}) delete r;
+0 rows available after 151 ms, consumed after another 0 ms
+Deleted 1 nodes
+```
+```shell
+neo4j> match (n:Neighbor {parent: "node1", child: "node2"}) delete n;
+0 rows available after 103 ms, consumed after another 0 ms
+Deleted 1 nodes
+```

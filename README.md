@@ -80,3 +80,18 @@ neo4j> MATCH (parent:Router)-[n]->(child) RETURN parent, neighbor, child;
 
 1 row available after 60 ms, consumed after another 1 ms
 ```
+
+* _Cleaning the slate_ before importing.
+```shell
+neo4j> match (a)-[r]->() delete a,r;
+0 rows available after 37 ms, consumed after another 0 ms
+Deleted 1 nodes, Deleted 1 relationships
+
+neo4j> match (a) delete a;
+0 rows available after 20 ms, consumed after another 0 ms
+Deleted 12 nodes
+
+neo4j> MATCH (n) RETURN n;
+0 rows available after 1 ms, consumed after another 0 ms
+neo4j>
+```

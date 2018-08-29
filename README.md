@@ -3,7 +3,7 @@
 * Create the `Router` and `Neighbor` nodes.
 
 ```shell
-neo4j> CREATE (p:Router {name: "node1"}), (c:Router {name: "node2"});
+neo4j> CREATE (:Router {name: "node1"}), (:Router {name: "node2"});
 0 rows available after 44 ms, consumed after another 0 ms
 Added 2 nodes, Set 2 properties, Added 2 labels
 ```

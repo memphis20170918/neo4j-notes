@@ -95,3 +95,12 @@ neo4j> MATCH (n) RETURN n;
 0 rows available after 1 ms, consumed after another 0 ms
 neo4j>
 ```
+```shell
+neo4j> match (a)-[r]->() delete a,r; match (a) delete a; MATCH (n) RETURN n;
+0 rows available after 3 ms, consumed after another 0 ms
+Deleted 3 nodes, Deleted 3 relationships
+0 rows available after 1 ms, consumed after another 0 ms
+Deleted 3 nodes
+0 rows available after 6 ms, consumed after another 0 ms
+neo4j>
+```

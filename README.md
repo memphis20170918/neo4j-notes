@@ -73,7 +73,7 @@ neo4j> MATCH (r1:Router)-[n]-(r2) RETURN r1, n, r2;
 
 * View the graph in a _directed_ form.
 ```shell
-neo4j> MATCH (parent:Router)-[n]->(child) RETURN parent, neighbor, child;
+neo4j> MATCH (parent:Router)-[neighbor]->(child) RETURN parent, neighbor, child;
 +-----------------------------------------------------------------------------------------------------------------------+
 | parent                      | neighbor                                              | child                           |
 +-----------------------------------------------------------------------------------------------------------------------+

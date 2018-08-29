@@ -71,9 +71,9 @@ neo4j> MATCH (r1:Router)-[n]-(r2) RETURN r1, n, r2;
 2 rows available after 127 ms, consumed after another 18 ms
 ```
 ```shell
-neo4j> MATCH (parent:Router)-[n]->(child) RETURN parent, n, child;
+neo4j> MATCH (parent:Router)-[n]->(child) RETURN parent, neighbor, child;
 +-----------------------------------------------------------------------------------------------------------------------+
-| parent                      | n                                                     | child                           |
+| parent                      | neighbor                                              | child                           |
 +-----------------------------------------------------------------------------------------------------------------------+
 | (:Router {name: "node1"})   | [:Neighbor {parent: "node1", child: "node2"}]         | (:Router {name: "node2"})       |
 +-----------------------------------------------------------------------------------------------------------------------+

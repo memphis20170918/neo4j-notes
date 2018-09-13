@@ -12,6 +12,17 @@ neo4j> CREATE (:Neighbor {parent: "node1", child: "node2"});
 0 rows available after 39 ms, consumed after another 0 ms
 Added 1 nodes, Set 2 properties, Added 1 labels
 ```
+* When creating multiple unique nodes, running `CREATE` or `CREATE UNIQUE` multiple times can generate this error.
+
+```shell
+py2neo.database.ClientError: Semantic Error: This pattern is not supported for CREATE UNIQUE
+```
+
+In which case, use `MERGE`.
+
+```shell
+MERGE ( :Router { name: "node1" } )
+```
 
 * Create the relationship connecting `node1` and `node2`.
 ```shell
